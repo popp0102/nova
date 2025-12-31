@@ -9,7 +9,10 @@
   "scripts": {
     "lint": "eslint .",
     "test": "jest",
-    "coverage": "jest --coverage --collectCoverageFrom='lib/**/*.{js,jsx}'"
+    "coverage": "jest --coverage --collectCoverageFrom='lib/**/*.{js,jsx}'",
+    "observatory": "npm run --prefix observatory start",
+    "observatory:ios": "npm run --prefix observatory ios",
+    "observatory:android": "npm run --prefix observatory android"
   },
   "peerDependencies": {
     "react": "^18.3.1",
