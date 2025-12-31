@@ -7,4 +7,4 @@ node_modules/
 *.mobileprovision
 *.orig.*
 web-build/
-.storybook/storybook.requires.js
+.storybook/storybook.requires.*
