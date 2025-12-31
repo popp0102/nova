@@ -1,23 +1,38 @@
 {
   "name": "@popp0102/nova",
-  "private": false,
   "version": "0.0.1",
+  "description": "React Native component library",
   "main": "lib/index.js",
+  "module": "lib/index.js",
+  "react-native": "lib/index.js",
+  "sideEffects": false,
   "files": [
     "lib"
   ],
+  "keywords": [
+    "react-native",
+    "components",
+    "ui"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/popp0102/nova.git"
+  },
+  "author": "popp0102",
+  "license": "MIT",
   "scripts": {
     "lint": "eslint .",
     "test": "jest",
     "coverage": "jest --coverage --collectCoverageFrom='lib/**/*.{js,jsx}'",
     "observatory": "npm run --prefix observatory start",
     "observatory:ios": "npm run --prefix observatory ios",
-    "observatory:android": "npm run --prefix observatory android"
+    "observatory:android": "npm run --prefix observatory android",
+    "prepublishOnly": "npm run lint && npm run test"
   },
   "peerDependencies": {
-    "react": "^18.3.1",
+    "react": ">=18.0.0",
     "react-native": ">=0.70.0",
-    "react-native-safe-area-context": "^4.0.0"
+    "react-native-safe-area-context": ">=4.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.24.0",
