@@ -15,6 +15,9 @@ export const Buttons = {
       <Button style={{ width: 200 }} type="secondary" onPress={() => console.log('Secondary pressed')}>
         Secondary Button
       </Button>
+      <Button style={{ width: 200 }} type="destructive" onPress={() => console.log('Destructive pressed')}>
+        Destructive Button
+      </Button>
     </View>
   ),
 };
