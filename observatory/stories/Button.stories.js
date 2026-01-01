@@ -4,34 +4,17 @@ import Button from '../../lib/components/Button';
 export default {
   title: 'Components/Button',
   component: Button,
-  decorators: [
-    (Story) => (
-      <View style={{ padding: 16 }}>
-        <Story />
-      </View>
-    ),
-  ],
-  argTypes: {
-    type: {
-      control: { type: 'select' },
-      options: ['primary', 'secondary'],
-    },
-    onPress: { action: 'pressed' },
-  },
 };
 
-export const Primary = {
-  args: {
-    type: 'primary',
-    children: 'Primary Button',
-  },
-  render: (args) => <Button {...args} />,
-};
-
-export const Secondary = {
-  args: {
-    type: 'secondary',
-    children: 'Secondary Button',
-  },
-  render: (args) => <Button {...args} />,
+export const Buttons = {
+  render: () => (
+    <View style={{ flex: 1, padding: 16, gap: 16, alignItems: 'center', justifyContent: 'center' }}>
+      <Button style={{ width: 200 }} type="primary" onPress={() => console.log('Primary pressed')}>
+        Primary Button
+      </Button>
+      <Button style={{ width: 200 }} type="secondary" onPress={() => console.log('Secondary pressed')}>
+        Secondary Button
+      </Button>
+    </View>
+  ),
 };
