@@ -35,11 +35,3 @@ export const Secondary = {
   },
   render: (args) => <Button {...args} />,
 };
-
-export const CustomText = {
-  args: {
-    type: 'primary',
-    children: 'Click Me!',
-  },
-  render: (args) => <Button {...args} />,
-};

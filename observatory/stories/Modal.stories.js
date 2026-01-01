@@ -91,6 +91,6 @@ const styles = StyleSheet.create({
   },
 });
 
-export const CustomModal = {
+export const WithInput = {
   render: () => <CustomModalComponent />,
 };
