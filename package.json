@@ -30,7 +30,6 @@
     "prepublishOnly": "npm run lint && npm run test"
   },
   "peerDependencies": {
-    "@expo/vector-icons": "*",
     "react": ">=18.0.0",
     "react-native": ">=0.70.0",
     "react-native-safe-area-context": ">=4.0.0"
