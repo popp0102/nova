@@ -6,4 +6,16 @@ module.exports = {
     }],
     '@babel/preset-flow',
   ],
+  plugins: [
+    [
+      'module-resolver',
+      {
+        root: ['./lib'],
+        alias: {
+          '@utils': './lib/utils',
+          '@components': './lib/components',
+        },
+      },
+    ],
+  ],
 };
