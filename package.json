@@ -48,5 +48,8 @@
     "react": "^18.3.1",
     "react-native": "^0.75.0",
     "react-test-renderer": "^18.3.1"
+  },
+  "dependencies": {
+    "@expo/vector-icons": "^15.0.3"
   }
 }
