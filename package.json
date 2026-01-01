@@ -1,6 +1,6 @@
 {
   "name": "@popp0102/nova",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "React Native component library",
   "main": "lib/index.js",
   "module": "lib/index.js",
@@ -50,5 +50,6 @@
     "react-native": "^0.75.0",
     "react-test-renderer": "^18.3.1"
   },
-  "dependencies": {}
+  "dependencies": {
+  }
 }
