@@ -89,6 +89,68 @@ export const SlideRight = {
   },
 };
 
+export const SlideUp = {
+  render: () => {
+    const [key, setKey] = useState(0);
+
+    return (
+      <View style={styles.container}>
+        <Button onPress={() => setKey(k => k + 1)} style={styles.button}>
+          Restart Animations
+        </Button>
+        <SlideView key={`slide-up-1-${key}`} direction="up" duration={1000}>
+          <View style={[styles.box, { backgroundColor: '#00BCD4' }]}>
+            <Text style={styles.text}>Slide Up (1s)</Text>
+          </View>
+        </SlideView>
+
+        <SlideView key={`slide-up-2-${key}`} direction="up" duration={500}>
+          <View style={[styles.box, { backgroundColor: '#009688' }]}>
+            <Text style={styles.text}>Slide Up (0.5s)</Text>
+          </View>
+        </SlideView>
+
+        <SlideView key={`slide-up-3-${key}`} direction="up" duration={2000}>
+          <View style={[styles.box, { backgroundColor: '#8BC34A' }]}>
+            <Text style={styles.text}>Slide Up (2s)</Text>
+          </View>
+        </SlideView>
+      </View>
+    );
+  },
+};
+
+export const SlideDown = {
+  render: () => {
+    const [key, setKey] = useState(0);
+
+    return (
+      <View style={styles.container}>
+        <Button onPress={() => setKey(k => k + 1)} style={styles.button}>
+          Restart Animations
+        </Button>
+        <SlideView key={`slide-down-1-${key}`} direction="down" duration={1000}>
+          <View style={[styles.box, { backgroundColor: '#FFEB3B' }]}>
+            <Text style={styles.text}>Slide Down (1s)</Text>
+          </View>
+        </SlideView>
+
+        <SlideView key={`slide-down-2-${key}`} direction="down" duration={500}>
+          <View style={[styles.box, { backgroundColor: '#FFC107' }]}>
+            <Text style={styles.text}>Slide Down (0.5s)</Text>
+          </View>
+        </SlideView>
+
+        <SlideView key={`slide-down-3-${key}`} direction="down" duration={2000}>
+          <View style={[styles.box, { backgroundColor: '#FF5722' }]}>
+            <Text style={styles.text}>Slide Down (2s)</Text>
+          </View>
+        </SlideView>
+      </View>
+    );
+  },
+};
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
