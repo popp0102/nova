@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet } from 'react-native';
 import { useState } from 'react';
-import FadeView from '../../lib/components/animations/FadeView';
-import Button from '../../lib/components/Button';
+import FadeView from '../../../lib/components/animations/FadeView';
+import Button from '../../../lib/components/Button';
 
 export default {
   title: 'Animations/FadeView',

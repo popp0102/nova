@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet } from 'react-native';
 import { useState } from 'react';
-import SlideView from '../../lib/components/animations/SlideView';
-import Button from '../../lib/components/Button';
+import SlideView from '../../../lib/components/animations/SlideView';
+import Button from '../../../lib/components/Button';
 
 export default {
   title: 'Animations/SlideView',
