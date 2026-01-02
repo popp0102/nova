@@ -7,5 +7,6 @@ module.exports = {
   ],
   moduleNameMapper: {
     '^@nova/(.*)$': '<rootDir>/lib/components/$1',
+    '^@expo/vector-icons$': '<rootDir>/tests/__mocks__/expo-vector-icons.js',
   },
 };
