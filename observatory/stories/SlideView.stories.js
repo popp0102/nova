@@ -27,6 +27,68 @@ export const Default = {
   },
 };
 
+export const SlideLeft = {
+  render: () => {
+    const [key, setKey] = useState(0);
+
+    return (
+      <View style={styles.container}>
+        <Button onPress={() => setKey(k => k + 1)} style={styles.button}>
+          Restart Animations
+        </Button>
+        <SlideView key={`slide-left-1-${key}`} direction="left" duration={1000}>
+          <View style={[styles.box, { backgroundColor: '#2196F3' }]}>
+            <Text style={styles.text}>Slide Left (1s)</Text>
+          </View>
+        </SlideView>
+
+        <SlideView key={`slide-left-2-${key}`} direction="left" duration={500}>
+          <View style={[styles.box, { backgroundColor: '#4CAF50' }]}>
+            <Text style={styles.text}>Slide Left (0.5s)</Text>
+          </View>
+        </SlideView>
+
+        <SlideView key={`slide-left-3-${key}`} direction="left" duration={2000}>
+          <View style={[styles.box, { backgroundColor: '#FF9800' }]}>
+            <Text style={styles.text}>Slide Left (2s)</Text>
+          </View>
+        </SlideView>
+      </View>
+    );
+  },
+};
+
+export const SlideRight = {
+  render: () => {
+    const [key, setKey] = useState(0);
+
+    return (
+      <View style={styles.container}>
+        <Button onPress={() => setKey(k => k + 1)} style={styles.button}>
+          Restart Animations
+        </Button>
+        <SlideView key={`slide-right-1-${key}`} direction="right" duration={1000}>
+          <View style={[styles.box, { backgroundColor: '#E91E63' }]}>
+            <Text style={styles.text}>Slide Right (1s)</Text>
+          </View>
+        </SlideView>
+
+        <SlideView key={`slide-right-2-${key}`} direction="right" duration={500}>
+          <View style={[styles.box, { backgroundColor: '#9C27B0' }]}>
+            <Text style={styles.text}>Slide Right (0.5s)</Text>
+          </View>
+        </SlideView>
+
+        <SlideView key={`slide-right-3-${key}`} direction="right" duration={2000}>
+          <View style={[styles.box, { backgroundColor: '#3F51B5' }]}>
+            <Text style={styles.text}>Slide Right (2s)</Text>
+          </View>
+        </SlideView>
+      </View>
+    );
+  },
+};
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
