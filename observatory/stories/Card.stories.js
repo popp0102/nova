@@ -28,7 +28,7 @@ export const Pressable = () => (
   </View>
 );
 
-export const CustomStyle = () => (
+export const WithCustomStyle = () => (
   <View style={styles.container}>
     <Card style={styles.customCard}>
       <Text style={styles.title}>Custom Styled Card</Text>

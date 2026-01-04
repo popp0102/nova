@@ -20,7 +20,7 @@ export const Sizes = () => (
   </View>
 );
 
-export const CustomColor = () => (
+export const WithCustomColor = () => (
   <View style={styles.container}>
     <Subtitle color="blue">Blue subtitle</Subtitle>
     <Subtitle color="green">Green subtitle</Subtitle>
