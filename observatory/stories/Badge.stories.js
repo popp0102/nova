@@ -27,3 +27,19 @@ export const Default = {
     </View>
   ),
 };
+
+export const Sizes = {
+  render: () => (
+    <View style={{ flex: 1, padding: 16, alignItems: 'center', justifyContent: 'center', gap: 16 }}>
+      <Badge size="small" backgroundColor="blue">
+        Small Badge (12px)
+      </Badge>
+      <Badge size="medium" backgroundColor="blue">
+        Medium Badge (14px)
+      </Badge>
+      <Badge size="large" backgroundColor="blue">
+        Large Badge (16px) - default
+      </Badge>
+    </View>
+  ),
+};
