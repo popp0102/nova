@@ -14,6 +14,7 @@ export const Default = () => (
 
 export const Sizes = () => (
   <View style={styles.container}>
+    <Title size="tiny">Tiny title (16px)</Title>
     <Title size="small">Small title (20px)</Title>
     <Title size="medium">Medium title (24px) - default</Title>
     <Title size="large">Large title (28px)</Title>
