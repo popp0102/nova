@@ -18,6 +18,12 @@ export const Default = {
       <Button style={{ width: 200 }} type="destructive" onPress={() => console.log('Destructive pressed')}>
         Destructive Button
       </Button>
+      <Button style={{ width: 200 }} type="primary" color="purple" onPress={() => console.log('Custom color pressed')}>
+        Custom Color
+      </Button>
+      <Button style={{ width: 200 }} type="primary" color="orange" textColor="darkblue" onPress={() => console.log('Custom text color pressed')}>
+        Custom Text Color
+      </Button>
     </View>
   ),
 };
