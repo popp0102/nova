@@ -156,3 +156,52 @@ export const TopIcons = {
     </View>
   ),
 };
+
+export const Sizes = {
+  render: () => (
+    <View style={{ flex: 1, padding: 16, gap: 16, alignItems: 'center', justifyContent: 'center' }}>
+      <Button
+        size="tiny"
+        type="primary"
+        onPress={() => console.log('Tiny pressed')}
+      >
+        Tiny Button
+      </Button>
+      <Button
+        size="small"
+        type="primary"
+        onPress={() => console.log('Small pressed')}
+      >
+        Small Button
+      </Button>
+      <Button
+        size="medium"
+        type="primary"
+        onPress={() => console.log('Medium pressed')}
+      >
+        Medium Button
+      </Button>
+      <Button
+        size="large"
+        type="primary"
+        onPress={() => console.log('Large pressed')}
+      >
+        Large Button
+      </Button>
+      <Button
+        size="xlarge"
+        type="primary"
+        onPress={() => console.log('XLarge pressed')}
+      >
+        XLarge Button
+      </Button>
+      <Button
+        size="xxlarge"
+        type="primary"
+        onPress={() => console.log('XXLarge pressed')}
+      >
+        XXLarge Button
+      </Button>
+    </View>
+  ),
+};
