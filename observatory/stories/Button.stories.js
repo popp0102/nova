@@ -33,35 +33,35 @@ export const Gradients = {
     <View style={{ flex: 1, padding: 16, gap: 16, alignItems: 'center', justifyContent: 'center' }}>
       <Button
         style={{ width: 200 }}
-        gradient={['#FF6B6B', '#4ECDC4']}
+        color={['#FF6B6B', '#4ECDC4']}
         onPress={() => console.log('Gradient 1 pressed')}
       >
         Sunset Teal
       </Button>
       <Button
         style={{ width: 200 }}
-        gradient={['#667eea', '#764ba2']}
+        color={['#667eea', '#764ba2']}
         onPress={() => console.log('Gradient 2 pressed')}
       >
         Purple Haze
       </Button>
       <Button
         style={{ width: 200 }}
-        gradient={['#f093fb', '#f5576c']}
+        color={['#f093fb', '#f5576c']}
         onPress={() => console.log('Gradient 3 pressed')}
       >
         Pink Flame
       </Button>
       <Button
         style={{ width: 200 }}
-        gradient={['#4facfe', '#00f2fe']}
+        color={['#4facfe', '#00f2fe']}
         onPress={() => console.log('Gradient 4 pressed')}
       >
         Ocean Blue
       </Button>
       <Button
         style={{ width: 200 }}
-        gradient={['#43e97b', '#38f9d7']}
+        color={['#43e97b', '#38f9d7']}
         onPress={() => console.log('Gradient 5 pressed')}
       >
         Mint Fresh
