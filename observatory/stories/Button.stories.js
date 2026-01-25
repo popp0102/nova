@@ -76,8 +76,7 @@ export const LeftIcons = {
       <Button
         style={{ width: 200 }}
         type="primary"
-        icon="add"
-        iconPosition="left"
+        icon={{ name: 'add', position: 'left' }}
         onPress={() => console.log('Add pressed')}
       >
         Add Item
@@ -85,8 +84,7 @@ export const LeftIcons = {
       <Button
         style={{ width: 200 }}
         type="destructive"
-        icon="delete"
-        iconPosition="left"
+        icon={{ name: 'delete', position: 'left' }}
         onPress={() => console.log('Delete pressed')}
       >
         Delete
@@ -94,9 +92,7 @@ export const LeftIcons = {
       <Button
         style={{ width: 200 }}
         type="secondary"
-        icon="favorite"
-        iconPosition="left"
-        iconColor="red"
+        icon={{ name: 'favorite', position: 'left', color: 'red' }}
         onPress={() => console.log('Favorite pressed')}
       >
         Favorite
@@ -104,9 +100,7 @@ export const LeftIcons = {
       <Button
         style={{ width: 200 }}
         type="primary"
-        icon="download"
-        iconPosition="left"
-        iconColor="lightgreen"
+        icon={{ name: 'download', position: 'left', color: 'lightgreen' }}
         onPress={() => console.log('Download pressed')}
       >
         Download
@@ -121,8 +115,7 @@ export const RightIcons = {
       <Button
         style={{ width: 200 }}
         type="secondary"
-        icon="arrow-forward"
-        iconPosition="right"
+        icon={{ name: 'arrow-forward', position: 'right' }}
         onPress={() => console.log('Next pressed')}
       >
         Next
@@ -130,8 +123,7 @@ export const RightIcons = {
       <Button
         style={{ width: 200 }}
         type="primary"
-        icon="check"
-        iconPosition="right"
+        icon={{ name: 'check', position: 'right' }}
         onPress={() => console.log('Confirm pressed')}
       >
         Confirm
@@ -139,8 +131,7 @@ export const RightIcons = {
       <Button
         style={{ width: 200 }}
         type="destructive"
-        icon="close"
-        iconPosition="right"
+        icon={{ name: 'close', position: 'right' }}
         onPress={() => console.log('Cancel pressed')}
       >
         Cancel
@@ -148,8 +139,7 @@ export const RightIcons = {
       <Button
         style={{ width: 200 }}
         type="secondary"
-        icon="send"
-        iconPosition="right"
+        icon={{ name: 'send', position: 'right' }}
         onPress={() => console.log('Send pressed')}
       >
         Send
@@ -165,8 +155,7 @@ export const TopIcons = {
         <Button
           style={{ width: 120, height: 120 }}
           type="secondary"
-          icon="create"
-          iconPosition="top"
+          icon={{ name: 'create', position: 'top' }}
           onPress={() => console.log('Create pressed')}
         >
           Create
@@ -174,8 +163,7 @@ export const TopIcons = {
         <Button
           style={{ width: 120, height: 120 }}
           type="secondary"
-          icon="settings"
-          iconPosition="top"
+          icon={{ name: 'settings', position: 'top' }}
           onPress={() => console.log('Settings pressed')}
         >
           Settings
@@ -185,8 +173,7 @@ export const TopIcons = {
         <Button
           style={{ width: 120, height: 120 }}
           type="primary"
-          icon="favorite"
-          iconPosition="top"
+          icon={{ name: 'favorite', position: 'top' }}
           onPress={() => console.log('Favorite pressed')}
         >
           Favorite
@@ -194,8 +181,7 @@ export const TopIcons = {
         <Button
           style={{ width: 120, height: 120 }}
           type="destructive"
-          icon="delete"
-          iconPosition="top"
+          icon={{ name: 'delete', position: 'top' }}
           onPress={() => console.log('Delete pressed')}
         >
           Delete
