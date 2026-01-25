@@ -33,38 +33,48 @@ export const Gradients = {
     <View style={{ flex: 1, padding: 16, gap: 16, alignItems: 'center', justifyContent: 'center' }}>
       <Button
         style={{ width: 200 }}
-        color={['#FF6B6B', '#4ECDC4']}
-        onPress={() => console.log('Gradient 1 pressed')}
+        color={['#7ED321', '#5BA318']}
+        textColor="#FFFFFF"
+        icon={{ name: 'play-arrow', position: 'left' }}
+        onPress={() => console.log('Start pressed')}
       >
-        Sunset Teal
+        Start
       </Button>
       <Button
         style={{ width: 200 }}
-        color={['#667eea', '#764ba2']}
-        onPress={() => console.log('Gradient 2 pressed')}
+        color={['#F5A623', '#D4880B']}
+        textColor="#FFFFFF"
+        icon={{ name: 'create', position: 'left' }}
+        onPress={() => console.log('Create pressed')}
       >
-        Purple Haze
+        Create
       </Button>
       <Button
         style={{ width: 200 }}
-        color={['#f093fb', '#f5576c']}
-        onPress={() => console.log('Gradient 3 pressed')}
+        color={['#6B7C93', '#4A5568']}
+        textColor="#FFFFFF"
+        icon={{ name: 'settings', position: 'left' }}
+        onPress={() => console.log('Settings pressed')}
       >
-        Pink Flame
+        Settings
       </Button>
       <Button
         style={{ width: 200 }}
-        color={['#4facfe', '#00f2fe']}
-        onPress={() => console.log('Gradient 4 pressed')}
+        color={['#E74C3C', '#C0392B']}
+        textColor="#FFFFFF"
+        icon={{ name: 'delete', position: 'left' }}
+        onPress={() => console.log('Delete pressed')}
       >
-        Ocean Blue
+        Delete
       </Button>
       <Button
         style={{ width: 200 }}
-        color={['#43e97b', '#38f9d7']}
-        onPress={() => console.log('Gradient 5 pressed')}
+        color={['#3498DB', '#2980B9']}
+        textColor="#FFFFFF"
+        icon={{ name: 'info', position: 'left' }}
+        onPress={() => console.log('Info pressed')}
       >
-        Mint Fresh
+        Info
       </Button>
     </View>
   ),
