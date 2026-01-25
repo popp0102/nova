@@ -35,46 +35,73 @@ export const Gradients = {
         style={{ width: 200 }}
         color={['#7ED321', '#5BA318']}
         textColor="#FFFFFF"
-        icon={{ name: 'play-arrow', position: 'left' }}
-        onPress={() => console.log('Start pressed')}
+        onPress={() => console.log('Grassland pressed')}
       >
-        Start
+        Grassland
       </Button>
       <Button
         style={{ width: 200 }}
         color={['#F5A623', '#D4880B']}
         textColor="#FFFFFF"
-        icon={{ name: 'create', position: 'left' }}
-        onPress={() => console.log('Create pressed')}
+        onPress={() => console.log('Sunset pressed')}
       >
-        Create
+        Sunset
       </Button>
       <Button
         style={{ width: 200 }}
         color={['#6B7C93', '#4A5568']}
         textColor="#FFFFFF"
-        icon={{ name: 'settings', position: 'left' }}
-        onPress={() => console.log('Settings pressed')}
+        onPress={() => console.log('Storm pressed')}
       >
-        Settings
+        Storm
       </Button>
       <Button
         style={{ width: 200 }}
         color={['#E74C3C', '#C0392B']}
         textColor="#FFFFFF"
-        icon={{ name: 'delete', position: 'left' }}
-        onPress={() => console.log('Delete pressed')}
+        onPress={() => console.log('Ember pressed')}
       >
-        Delete
+        Ember
       </Button>
       <Button
         style={{ width: 200 }}
         color={['#3498DB', '#2980B9']}
         textColor="#FFFFFF"
-        icon={{ name: 'info', position: 'left' }}
-        onPress={() => console.log('Info pressed')}
+        onPress={() => console.log('Ocean pressed')}
       >
-        Info
+        Ocean
+      </Button>
+      <Button
+        style={{ width: 200 }}
+        color={['#BA68C8', '#6A1B9A']}
+        textColor="#FFFFFF"
+        onPress={() => console.log('Purple pressed')}
+      >
+        Mystic
+      </Button>
+      <Button
+        style={{ width: 200 }}
+        color={['#4DD0E1', '#00838F']}
+        textColor="#FFFFFF"
+        onPress={() => console.log('Teal pressed')}
+      >
+        Lagoon
+      </Button>
+      <Button
+        style={{ width: 200 }}
+        color={['#FF80AB', '#AD1457']}
+        textColor="#FFFFFF"
+        onPress={() => console.log('Pink pressed')}
+      >
+        Flamingo
+      </Button>
+      <Button
+        style={{ width: 200 }}
+        color={['#FFD54F', '#FF8F00']}
+        textColor="#1A1A1A"
+        onPress={() => console.log('Gold pressed')}
+      >
+        Golden
       </Button>
     </View>
   ),
