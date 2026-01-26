@@ -17,34 +17,34 @@ describe('Button', () => {
     expect(mockOnPress).toHaveBeenCalledTimes(1);
   });
 
-  it('renders with icon and iconPosition="top" in vertical layout', () => {
+  it('renders with icon position="top" in vertical layout', () => {
     const { getByText } = render(
-      <Button icon="create" iconPosition="top">Create</Button>
+      <Button icon={{ name: 'create', position: 'top' }}>Create</Button>
     );
     expect(getByText('Create')).toBeTruthy();
   });
 
-  it('renders with icon and iconPosition="left"', () => {
+  it('renders with icon position="left"', () => {
     const { getByText } = render(
-      <Button icon="add" iconPosition="left">Add Item</Button>
+      <Button icon={{ name: 'add', position: 'left' }}>Add Item</Button>
     );
     expect(getByText('Add Item')).toBeTruthy();
   });
 
-  it('renders with icon and iconPosition="right"', () => {
+  it('renders with icon position="right"', () => {
     const { getByText } = render(
-      <Button icon="arrow-forward" iconPosition="right">Next</Button>
+      <Button icon={{ name: 'arrow-forward', position: 'right' }}>Next</Button>
     );
     expect(getByText('Next')).toBeTruthy();
   });
 
-  it('throws error for invalid iconPosition', () => {
+  it('throws error for invalid icon.position', () => {
     // Suppress console.error for this test
     const spy = jest.spyOn(console, 'error').mockImplementation(() => {});
 
     expect(() => {
-      render(<Button icon="add" iconPosition="bottom">Invalid</Button>);
-    }).toThrow('Invalid iconPosition: "bottom". Must be "left", "right", or "top".');
+      render(<Button icon={{ name: 'add', position: 'bottom' }}>Invalid</Button>);
+    }).toThrow('Invalid icon.position: "bottom". Must be "left", "right", or "top".');
 
     spy.mockRestore();
   });
