@@ -1,20 +1,20 @@
 import React from 'react';
 import { render } from '@testing-library/react-native';
-import Title from '@nova/Title';
+import Heading from '@nova/Heading';
 
-describe('Title', () => {
+describe('Heading', () => {
   it('renders children correctly', () => {
     const { getByText } = render(
-      <Title>Test Title</Title>
+      <Heading>Test Heading</Heading>
     );
-    expect(getByText('Test Title')).toBeTruthy();
+    expect(getByText('Test Heading')).toBeTruthy();
   });
 
   it('applies default color and size', () => {
     const { getByText } = render(
-      <Title>Default Title</Title>
+      <Heading>Default Heading</Heading>
     );
-    const element = getByText('Default Title');
+    const element = getByText('Default Heading');
     expect(element.props.style).toMatchObject(
       expect.arrayContaining([
         expect.objectContaining({ color: 'black', fontSize: 24 })
@@ -24,9 +24,9 @@ describe('Title', () => {
 
   it('applies custom color', () => {
     const { getByText } = render(
-      <Title color="blue">Blue Title</Title>
+      <Heading color="blue">Blue Heading</Heading>
     );
-    const element = getByText('Blue Title');
+    const element = getByText('Blue Heading');
     expect(element.props.style).toMatchObject(
       expect.arrayContaining([
         expect.objectContaining({ color: 'blue' })
@@ -36,16 +36,16 @@ describe('Title', () => {
 
   it('applies different sizes', () => {
     const { getByText, rerender } = render(
-      <Title size="small">Small</Title>
+      <Heading size="h5">h5 Heading</Heading>
     );
-    expect(getByText('Small').props.style).toMatchObject(
+    expect(getByText('h5 Heading').props.style).toMatchObject(
       expect.arrayContaining([
         expect.objectContaining({ fontSize: 20 })
       ])
     );
 
-    rerender(<Title size="large">Large</Title>);
-    expect(getByText('Large').props.style).toMatchObject(
+    rerender(<Heading size="h3">h3 Heading</Heading>);
+    expect(getByText('h3 Heading').props.style).toMatchObject(
       expect.arrayContaining([
         expect.objectContaining({ fontSize: 28 })
       ])
@@ -54,7 +54,7 @@ describe('Title', () => {
 
   it('applies custom fontFamily', () => {
     const { getByText } = render(
-      <Title fontFamily="Courier">Custom Font</Title>
+      <Heading fontFamily="Courier">Custom Font</Heading>
     );
     const element = getByText('Custom Font');
     expect(element.props.style).toMatchObject(
