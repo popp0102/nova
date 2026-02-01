@@ -29,6 +29,14 @@ export const WithCustomColor = () => (
   </View>
 );
 
+export const WithCustomFontFamily = () => (
+  <View style={styles.container}>
+    <Title fontFamily="Courier">Courier font title</Title>
+    <Title fontFamily="Georgia">Georgia font title</Title>
+    <Title fontFamily="Verdana">Verdana font title</Title>
+  </View>
+);
+
 const styles = StyleSheet.create({
   container: {
     padding: 16,

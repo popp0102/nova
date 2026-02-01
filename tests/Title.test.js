@@ -51,4 +51,16 @@ describe('Title', () => {
       ])
     );
   });
+
+  it('applies custom fontFamily', () => {
+    const { getByText } = render(
+      <Title fontFamily="Courier">Custom Font</Title>
+    );
+    const element = getByText('Custom Font');
+    expect(element.props.style).toMatchObject(
+      expect.arrayContaining([
+        expect.objectContaining({ fontFamily: 'Courier' })
+      ])
+    );
+  });
 });
