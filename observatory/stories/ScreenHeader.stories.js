@@ -13,29 +13,10 @@ export const Default = () => (
   </View>
 );
 
-export const WithSubtitle = () => (
-  <View style={styles.container}>
-    <ScreenHeader
-      title="Your Hunts"
-      subtitle="Create and manage your adventures"
-    />
-  </View>
-);
-
 export const WithBackButton = () => (
   <View style={styles.container}>
     <ScreenHeader
       title="Settings"
-      onBack={() => alert('Back pressed')}
-    />
-  </View>
-);
-
-export const WithBackButtonAndSubtitle = () => (
-  <View style={styles.container}>
-    <ScreenHeader
-      title="My Hunt"
-      subtitle="5 Trials"
       onBack={() => alert('Back pressed')}
     />
   </View>
@@ -55,9 +36,7 @@ export const CustomColors = () => (
   <View style={styles.container}>
     <ScreenHeader
       title="Custom Colors"
-      subtitle="With custom styling"
       titleColor="#FF5733"
-      subtitleColor="#C70039"
       backIconColor="#900C3F"
       onBack={() => alert('Back pressed')}
     />
@@ -68,7 +47,6 @@ export const CustomFont = () => (
   <View style={styles.container}>
     <ScreenHeader
       title="Custom Font"
-      subtitle="Using Arial"
       titleFontFamily="Arial"
       onBack={() => alert('Back pressed')}
     />
@@ -79,11 +57,9 @@ export const AllFeatures = () => (
   <View style={styles.container}>
     <ScreenHeader
       title="All Features"
-      subtitle="Back button, subtitle, and right content"
       onBack={() => alert('Back pressed')}
       rightContent={<Text style={{ color: '#4A2C0A', fontWeight: 'bold' }}>⭐</Text>}
       titleColor="#4A2C0A"
-      subtitleColor="#2C1810"
     />
   </View>
 );

@@ -8,19 +8,6 @@ describe('ScreenHeader', () => {
     expect(getByText('My Screen')).toBeTruthy();
   });
 
-  it('renders with title and subtitle', () => {
-    const { getByText } = render(
-      <ScreenHeader title="My Screen" subtitle="A cool subtitle" />
-    );
-    expect(getByText('My Screen')).toBeTruthy();
-    expect(getByText('A cool subtitle')).toBeTruthy();
-  });
-
-  it('renders without subtitle when not provided', () => {
-    const { queryByText } = render(<ScreenHeader title="My Screen" />);
-    expect(queryByText('A cool subtitle')).toBeNull();
-  });
-
   it('calls onBack when back button is pressed', () => {
     const mockOnBack = jest.fn();
     const { getByTestId } = render(
@@ -52,17 +39,6 @@ describe('ScreenHeader', () => {
       <ScreenHeader title="My Screen" titleColor="#FF0000" />
     );
     expect(getByText('My Screen')).toBeTruthy();
-  });
-
-  it('applies custom subtitleColor', () => {
-    const { getByText } = render(
-      <ScreenHeader
-        title="My Screen"
-        subtitle="Subtitle"
-        subtitleColor="#0000FF"
-      />
-    );
-    expect(getByText('Subtitle')).toBeTruthy();
   });
 
   it('applies custom titleFontFamily', () => {
