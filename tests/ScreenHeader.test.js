@@ -8,30 +8,63 @@ describe('ScreenHeader', () => {
     expect(getByText('My Screen')).toBeTruthy();
   });
 
-  it('calls onBack when back button is pressed', () => {
-    const mockOnBack = jest.fn();
+  it('calls onSelect when left icon is pressed', () => {
+    const mockOnSelect = jest.fn();
     const { getByTestId } = render(
-      <ScreenHeader title="My Screen" onBack={mockOnBack} />
+      <ScreenHeader title="My Screen" leftIcon={{ onSelect: mockOnSelect }} />
     );
 
-    const backButton = getByTestId('screen-header-back-button');
-    fireEvent.press(backButton);
-    expect(mockOnBack).toHaveBeenCalledTimes(1);
+    const leftIcon = getByTestId('screen-header-left-icon');
+    fireEvent.press(leftIcon);
+    expect(mockOnSelect).toHaveBeenCalledTimes(1);
   });
 
-  it('does not render back button when onBack is not provided', () => {
+  it('does not render left icon when leftIcon is not provided', () => {
     const { queryByTestId } = render(<ScreenHeader title="My Screen" />);
-    expect(queryByTestId('screen-header-back-button')).toBeNull();
+    expect(queryByTestId('screen-header-left-icon')).toBeNull();
   });
 
-  it('renders with rightContent', () => {
-    const { getByText } = render(
+  it('renders left icon with default arrow-back', () => {
+    const { getByTestId } = render(
+      <ScreenHeader title="My Screen" leftIcon={{ onSelect: () => {} }} />
+    );
+    expect(getByTestId('screen-header-left-icon')).toBeTruthy();
+  });
+
+  it('renders left icon without pressable when onSelect is not provided', () => {
+    const { getByTestId } = render(
+      <ScreenHeader title="My Screen" leftIcon={{}} />
+    );
+    expect(getByTestId('screen-header-left-icon')).toBeTruthy();
+  });
+
+  it('renders with rightIcon', () => {
+    const { getByTestId } = render(
       <ScreenHeader
         title="My Screen"
-        rightContent={<Text>Badge</Text>}
+        rightIcon={{ name: "check-circle" }}
       />
     );
-    expect(getByText('Badge')).toBeTruthy();
+    expect(getByTestId('screen-header-right-icon')).toBeTruthy();
+  });
+
+  it('does not render rightIcon when not provided', () => {
+    const { queryByTestId } = render(<ScreenHeader title="My Screen" />);
+    expect(queryByTestId('screen-header-right-icon')).toBeNull();
+  });
+
+  it('calls onSelect when pressable rightIcon is pressed', () => {
+    const mockOnSelect = jest.fn();
+    const { getByTestId } = render(
+      <ScreenHeader
+        title="My Screen"
+        rightIcon={{ name: "more-vert", onSelect: mockOnSelect }}
+      />
+    );
+
+    const rightIcon = getByTestId('screen-header-right-icon');
+    fireEvent.press(rightIcon);
+    expect(mockOnSelect).toHaveBeenCalledTimes(1);
   });
 
   it('applies custom titleColor', () => {

@@ -16,7 +16,7 @@ export const Sizes = () => (
   <View style={styles.container}>
     <Heading size="h1">H1 Heading (64px)</Heading>
     <Heading size="h2">H2 Heading (48px)</Heading>
-    <Heading size="h3">H3 Heading (28px)</Heading>
+    <Heading size="h3">H3 Heading (36px)</Heading>
     <Heading size="h4">H4 Heading (24px) - default</Heading>
     <Heading size="h5">H5 Heading (20px)</Heading>
     <Heading size="h6">H6 Heading (16px)</Heading>

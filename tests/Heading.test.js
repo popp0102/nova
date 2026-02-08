@@ -47,7 +47,7 @@ describe('Heading', () => {
     rerender(<Heading size="h3">h3 Heading</Heading>);
     expect(getByText('h3 Heading').props.style).toMatchObject(
       expect.arrayContaining([
-        expect.objectContaining({ fontSize: 28 })
+        expect.objectContaining({ fontSize: 36 })
       ])
     );
   });

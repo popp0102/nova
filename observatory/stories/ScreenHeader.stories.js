@@ -1,6 +1,5 @@
 import { View, Text, StyleSheet } from "react-native";
 import ScreenHeader from "../../lib/components/ScreenHeader";
-import Badge from "../../lib/components/Badge";
 
 export default {
   title: "Components/ScreenHeader",
@@ -17,17 +16,17 @@ export const WithBackButton = () => (
   <View style={styles.container}>
     <ScreenHeader
       title="Settings"
-      onBack={() => alert('Back pressed')}
+      leftIcon={{ onSelect: () => alert('Back pressed') }}
     />
   </View>
 );
 
-export const WithRightContent = () => (
+export const WithRightIcon = () => (
   <View style={styles.container}>
     <ScreenHeader
       title="Trial Name"
-      onBack={() => alert('Back pressed')}
-      rightContent={<Badge leftIcon="check-circle" backgroundColor="green">Solved</Badge>}
+      leftIcon={{ onSelect: () => alert('Back pressed') }}
+      rightIcon={{ name: "check-circle", color: "green" }}
     />
   </View>
 );
@@ -37,8 +36,7 @@ export const CustomColors = () => (
     <ScreenHeader
       title="Custom Colors"
       titleColor="#FF5733"
-      backIconColor="#900C3F"
-      onBack={() => alert('Back pressed')}
+      leftIcon={{ color: "#900C3F", onSelect: () => alert('Back pressed') }}
     />
   </View>
 );
@@ -48,7 +46,21 @@ export const CustomFont = () => (
     <ScreenHeader
       title="Custom Font"
       titleFontFamily="Arial"
-      onBack={() => alert('Back pressed')}
+      leftIcon={{ onSelect: () => alert('Back pressed') }}
+    />
+  </View>
+);
+
+export const WithPressableIcon = () => (
+  <View style={styles.container}>
+    <ScreenHeader
+      title="Settings"
+      leftIcon={{ onSelect: () => alert('Back pressed') }}
+      rightIcon={{
+        name: "more-vert",
+        color: "#4A2C0A",
+        onSelect: () => alert('Menu pressed')
+      }}
     />
   </View>
 );
@@ -57,8 +69,30 @@ export const AllFeatures = () => (
   <View style={styles.container}>
     <ScreenHeader
       title="All Features"
-      onBack={() => alert('Back pressed')}
-      rightContent={<Text style={{ color: '#4A2C0A', fontWeight: 'bold' }}>⭐</Text>}
+      leftIcon={{ onSelect: () => alert('Back pressed') }}
+      rightIcon={{ name: "star", color: "#FFD700" }}
+      titleColor="#4A2C0A"
+    />
+  </View>
+);
+
+export const LongTitleTruncation = () => (
+  <View style={styles.container}>
+    <ScreenHeader
+      title="This Is A Very Long Title That Should Truncate With Ellipsis"
+      leftIcon={{ onSelect: () => alert('Back pressed') }}
+      rightIcon={{ name: "check-circle", color: "green" }}
+      titleColor="#4A2C0A"
+    />
+  </View>
+);
+
+export const WithChewyFont = () => (
+  <View style={styles.container}>
+    <ScreenHeader
+      title="Your Hunts"
+      titleFontFamily="Chewy"
+      leftIcon={{ onSelect: () => alert('Back pressed') }}
       titleColor="#4A2C0A"
     />
   </View>
