@@ -1,5 +1,4 @@
 import { render, fireEvent } from '@testing-library/react-native';
-import { Text } from 'react-native';
 import ScreenHeader from '@nova/ScreenHeader';
 
 describe('ScreenHeader', () => {
