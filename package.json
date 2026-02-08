@@ -1,6 +1,6 @@
 {
   "name": "@popp0102/nova",
-  "version": "0.9.2",
+  "version": "0.9.3",
   "description": "React Native component library",
   "main": "lib/index.js",
   "module": "lib/index.js",
