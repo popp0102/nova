@@ -27,14 +27,14 @@ describe('ScreenHeader', () => {
       <ScreenHeader title="My Screen" onBack={mockOnBack} />
     );
 
-    const backButton = getByTestId('MaterialCommunityIcons');
-    fireEvent.press(backButton.parent);
+    const backButton = getByTestId('screen-header-back-button');
+    fireEvent.press(backButton);
     expect(mockOnBack).toHaveBeenCalledTimes(1);
   });
 
   it('does not render back button when onBack is not provided', () => {
     const { queryByTestId } = render(<ScreenHeader title="My Screen" />);
-    expect(queryByTestId('MaterialCommunityIcons')).toBeNull();
+    expect(queryByTestId('screen-header-back-button')).toBeNull();
   });
 
   it('renders with rightContent', () => {
