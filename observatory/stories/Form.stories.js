@@ -349,10 +349,86 @@ export const WithRequiredFields = () => {
   );
 };
 
+export const StyledLogin = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const isValid = email.trim().length > 0 && password.trim().length > 0;
+
+  return (
+    <View style={styles.styledContainer}>
+      <Form style={styles.styledForm}>
+        <Form.Title fontFamily="Chewy" color="#a78bfa">
+          Welcome Back
+        </Form.Title>
+        <Form.Description style={styles.styledDescription}>
+          Sign in to continue your adventure
+        </Form.Description>
+        <Form.TextInput
+          label="Email"
+          placeholder="Enter your email"
+          value={email}
+          onChangeText={setEmail}
+          keyboardType="email-address"
+          style={styles.styledInput}
+          labelStyle={styles.styledLabel}
+          required
+        />
+        <Form.TextInput
+          label="Password"
+          placeholder="Enter your password"
+          value={password}
+          onChangeText={setPassword}
+          secureTextEntry
+          style={styles.styledInput}
+          labelStyle={styles.styledLabel}
+          required
+        />
+        <Form.SubmitButton
+          disabled={!isValid}
+          color="#667eea"
+          icon={{ name: "login", position: "right" }}
+          onPress={() => alert('Login successful!')}
+        >
+          Sign In
+        </Form.SubmitButton>
+      </Form>
+    </View>
+  );
+};
+
 const styles = StyleSheet.create({
   container: {
     padding: 16,
     backgroundColor: '#f0f0f0',
     flex: 1,
+  },
+  styledContainer: {
+    padding: 16,
+    backgroundColor: '#2d3748',
+    flex: 1,
+    justifyContent: 'center',
+  },
+  styledForm: {
+    backgroundColor: '#1a202c',
+    borderRadius: 16,
+    padding: 24,
+    shadowColor: '#667eea',
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.3,
+    shadowRadius: 16,
+    elevation: 12,
+  },
+  styledDescription: {
+    color: '#cbd5e0',
+    fontSize: 16,
+  },
+  styledInput: {
+    backgroundColor: '#2d3748',
+    borderColor: '#667eea',
+    color: '#fff',
+  },
+  styledLabel: {
+    color: '#e2e8f0',
   },
 });
