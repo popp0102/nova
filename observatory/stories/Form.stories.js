@@ -22,6 +22,7 @@ export const Default = () => {
           placeholder="Enter your name"
           value={name}
           onChangeText={setName}
+          required
         />
         <Form.TextInput
           label="Age"
@@ -29,6 +30,7 @@ export const Default = () => {
           keyboardType="number-pad"
           value={age}
           onChangeText={setAge}
+          required
         />
         <Form.TextArea
           label="Description"
@@ -96,6 +98,7 @@ export const HorizontalLabels = () => {
           placeholder="John"
           value={firstName}
           onChangeText={setFirstName}
+          required
         />
         <Form.TextInput
           label="Last Name"
@@ -103,6 +106,7 @@ export const HorizontalLabels = () => {
           placeholder="Doe"
           value={lastName}
           onChangeText={setLastName}
+          required
         />
         <Form.TextInput
           label="Age"
@@ -293,6 +297,52 @@ export const NoLabels = () => {
         />
         <Form.SubmitButton onPress={() => alert(`Value: ${value}`)}>
           Go
+        </Form.SubmitButton>
+      </Form>
+    </View>
+  );
+};
+
+export const WithRequiredFields = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+
+  const isValid = name.trim().length > 0 && email.trim().length > 0 && phone.trim().length > 0;
+
+  return (
+    <View style={styles.container}>
+      <Form>
+        <Form.Title>Required Fields</Form.Title>
+        <Form.Description>Fill out all required fields to enable submit button</Form.Description>
+        <Form.TextInput
+          label="Name"
+          placeholder="Enter your name"
+          value={name}
+          onChangeText={setName}
+          required
+        />
+        <Form.TextInput
+          label="Email"
+          placeholder="you@example.com"
+          keyboardType="email-address"
+          value={email}
+          onChangeText={setEmail}
+          required
+        />
+        <Form.TextInput
+          label="Phone"
+          placeholder="(555) 123-4567"
+          keyboardType="phone-pad"
+          value={phone}
+          onChangeText={setPhone}
+          required
+        />
+        <Form.SubmitButton
+          disabled={!isValid}
+          onPress={() => alert(`Name: ${name}, Email: ${email}, Phone: ${phone}`)}
+        >
+          Submit
         </Form.SubmitButton>
       </Form>
     </View>

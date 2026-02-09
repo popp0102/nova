@@ -48,4 +48,24 @@ describe('Button', () => {
 
     spy.mockRestore();
   });
+
+  it('does not call onPress when disabled', () => {
+    const mockOnPress = jest.fn();
+    const { getByText } = render(
+      <Button onPress={mockOnPress} disabled>Submit</Button>
+    );
+
+    fireEvent.press(getByText('Submit'));
+    expect(mockOnPress).not.toHaveBeenCalled();
+  });
+
+  it('calls onPress when not disabled', () => {
+    const mockOnPress = jest.fn();
+    const { getByText } = render(
+      <Button onPress={mockOnPress} disabled={false}>Submit</Button>
+    );
+
+    fireEvent.press(getByText('Submit'));
+    expect(mockOnPress).toHaveBeenCalledTimes(1);
+  });
 });

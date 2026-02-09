@@ -166,4 +166,71 @@ describe('Form', () => {
     );
     expect(getByText('Bio is required')).toBeTruthy();
   });
+
+  it('displays required asterisk for Form.TextInput', () => {
+    const { getByText } = render(
+      <Form.TextInput
+        label="Name"
+        placeholder="Enter name"
+        value=""
+        onChangeText={() => {}}
+        required
+      />
+    );
+    expect(getByText('Name')).toBeTruthy();
+    expect(getByText('*')).toBeTruthy();
+  });
+
+  it('displays required asterisk for Form.TextArea', () => {
+    const { getByText } = render(
+      <Form.TextArea
+        label="Bio"
+        placeholder="Enter bio"
+        value=""
+        onChangeText={() => {}}
+        required
+      />
+    );
+    expect(getByText('Bio')).toBeTruthy();
+    expect(getByText('*')).toBeTruthy();
+  });
+
+  it('does not display asterisk when required is false', () => {
+    const { getByText } = render(
+      <Form.TextInput
+        label="Optional Field"
+        placeholder="Enter value"
+        value=""
+        onChangeText={() => {}}
+      />
+    );
+    expect(getByText('Optional Field')).toBeTruthy();
+    const asterisk = getByText('*');
+    expect(asterisk).toBeTruthy();
+    expect(asterisk.props.style).toContainEqual({ opacity: 0 });
+  });
+
+  it('disables Form.SubmitButton when disabled prop is true', () => {
+    const mockOnPress = jest.fn();
+    const { getByText } = render(
+      <Form.SubmitButton onPress={mockOnPress} disabled>
+        Submit
+      </Form.SubmitButton>
+    );
+
+    fireEvent.press(getByText('Submit'));
+    expect(mockOnPress).not.toHaveBeenCalled();
+  });
+
+  it('enables Form.SubmitButton when disabled prop is false', () => {
+    const mockOnPress = jest.fn();
+    const { getByText } = render(
+      <Form.SubmitButton onPress={mockOnPress} disabled={false}>
+        Submit
+      </Form.SubmitButton>
+    );
+
+    fireEvent.press(getByText('Submit'));
+    expect(mockOnPress).toHaveBeenCalledTimes(1);
+  });
 });
