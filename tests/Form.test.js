@@ -130,4 +130,40 @@ describe('Form', () => {
     );
     expect(queryByText('Age cannot be negative')).toBeNull();
   });
+
+  it('renders Form.TextArea with label', () => {
+    const { getByText, getByPlaceholderText } = render(
+      <Form.TextArea label="Description" placeholder="Enter description" />
+    );
+    expect(getByText('Description')).toBeTruthy();
+    expect(getByPlaceholderText('Enter description')).toBeTruthy();
+  });
+
+  it('handles Form.TextArea value changes', () => {
+    const mockOnChangeText = jest.fn();
+    const { getByPlaceholderText } = render(
+      <Form.TextArea
+        placeholder="Enter text"
+        value=""
+        onChangeText={mockOnChangeText}
+      />
+    );
+
+    const textarea = getByPlaceholderText('Enter text');
+    fireEvent.changeText(textarea, 'new value');
+    expect(mockOnChangeText).toHaveBeenCalledWith('new value');
+  });
+
+  it('displays error message for Form.TextArea', () => {
+    const { getByText } = render(
+      <Form.TextArea
+        label="Bio"
+        placeholder="Enter bio"
+        value=""
+        onChangeText={() => {}}
+        error="Bio is required"
+      />
+    );
+    expect(getByText('Bio is required')).toBeTruthy();
+  });
 });

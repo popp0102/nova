@@ -9,6 +9,7 @@ export default {
 
 export const Default = () => {
   const [name, setName] = useState('');
+  const [age, setAge] = useState('');
   const [description, setDescription] = useState('');
 
   return (
@@ -23,12 +24,19 @@ export const Default = () => {
           onChangeText={setName}
         />
         <Form.TextInput
+          label="Age"
+          placeholder="Enter your age"
+          keyboardType="number-pad"
+          value={age}
+          onChangeText={setAge}
+        />
+        <Form.TextArea
           label="Description"
           placeholder="Enter description"
           value={description}
           onChangeText={setDescription}
         />
-        <Form.SubmitButton onPress={() => alert(`Name: ${name}, Description: ${description}`)}>
+        <Form.SubmitButton onPress={() => alert(`Name: ${name}, Age: ${age}, Description: ${description}`)}>
           Submit
         </Form.SubmitButton>
       </Form>
