@@ -104,4 +104,30 @@ describe('Form', () => {
     expect(getByPlaceholderText('Name')).toBeTruthy();
     expect(getByText('Submit')).toBeTruthy();
   });
+
+  it('displays error message when error prop is provided', () => {
+    const { getByText } = render(
+      <Form.TextInput
+        label="Age"
+        placeholder="Enter age"
+        value="-5"
+        onChangeText={() => {}}
+        error="Age cannot be negative"
+      />
+    );
+    expect(getByText('Age cannot be negative')).toBeTruthy();
+  });
+
+  it('does not display error message when error prop is empty', () => {
+    const { queryByText } = render(
+      <Form.TextInput
+        label="Age"
+        placeholder="Enter age"
+        value="25"
+        onChangeText={() => {}}
+        error=""
+      />
+    );
+    expect(queryByText('Age cannot be negative')).toBeNull();
+  });
 });

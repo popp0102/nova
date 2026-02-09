@@ -75,6 +75,8 @@ export const HorizontalLabels = () => {
   const [lastName, setLastName] = useState('');
   const [age, setAge] = useState('');
 
+  const ageError = age && parseInt(age) < 0 ? 'Age cannot be negative' : '';
+
   return (
     <View style={styles.container}>
       <Form>
@@ -97,10 +99,11 @@ export const HorizontalLabels = () => {
         <Form.TextInput
           label="Age"
           labelPosition="horizontal"
-          type="number"
+          keyboardType="number-pad"
           placeholder="25"
           value={age}
           onChangeText={setAge}
+          error={ageError}
         />
         <Form.SubmitButton onPress={() => alert('Submitted')}>
           Submit
@@ -118,28 +121,64 @@ export const InputTypes = () => {
   return (
     <View style={styles.container}>
       <Form>
-        <Form.Title>Input Types</Form.Title>
-        <Form.Description>Different input types with automatic keyboard</Form.Description>
+        <Form.Title>Keyboard Types</Form.Title>
+        <Form.Description>Different keyboard types for different inputs</Form.Description>
         <Form.TextInput
           label="Email"
-          type="email"
+          keyboardType="email-address"
           placeholder="you@example.com"
           value={email}
           onChangeText={setEmail}
         />
         <Form.TextInput
           label="Phone"
-          type="phone"
+          keyboardType="phone-pad"
           placeholder="(555) 123-4567"
           value={phone}
           onChangeText={setPhone}
         />
         <Form.TextInput
           label="Age"
-          type="number"
+          keyboardType="number-pad"
           placeholder="25"
           value={age}
           onChangeText={setAge}
+        />
+        <Form.SubmitButton onPress={() => alert('Submitted')}>
+          Submit
+        </Form.SubmitButton>
+      </Form>
+    </View>
+  );
+};
+
+export const WithValidation = () => {
+  const [age, setAge] = useState('');
+  const [email, setEmail] = useState('');
+
+  const ageError = age && parseInt(age) < 0 ? 'Age cannot be negative' : '';
+  const emailError = email && !email.includes('@') ? 'Please enter a valid email' : '';
+
+  return (
+    <View style={styles.container}>
+      <Form>
+        <Form.Title>Form Validation</Form.Title>
+        <Form.Description>Try entering a negative age or invalid email</Form.Description>
+        <Form.TextInput
+          label="Age"
+          keyboardType="number-pad"
+          placeholder="25"
+          value={age}
+          onChangeText={setAge}
+          error={ageError}
+        />
+        <Form.TextInput
+          label="Email"
+          keyboardType="email-address"
+          placeholder="you@example.com"
+          value={email}
+          onChangeText={setEmail}
+          error={emailError}
         />
         <Form.SubmitButton onPress={() => alert('Submitted')}>
           Submit
