@@ -7,6 +7,8 @@ module.exports = {
     '@babel/preset-flow',
   ],
   plugins: [
+    'babel-plugin-syntax-hermes-parser',
+    '@babel/plugin-transform-flow-strip-types',
     [
       'module-resolver',
       {

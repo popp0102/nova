@@ -13,11 +13,11 @@ describe('IconButton', () => {
 
   it('calls onPress when pressed', () => {
     const mockOnPress = jest.fn();
-    const { UNSAFE_getByType } = render(
-      <IconButton name="close" onPress={mockOnPress} />
+    const { getByTestId } = render(
+      <IconButton name="close" onPress={mockOnPress} testID="icon-button" />
     );
 
-    const pressable = UNSAFE_getByType(Pressable);
+    const pressable = getByTestId('icon-button');
     fireEvent.press(pressable);
     expect(mockOnPress).toHaveBeenCalledTimes(1);
   });

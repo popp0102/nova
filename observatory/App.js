@@ -1,5 +1,5 @@
-import './.storybook/storybook.requires';
-import { view } from './.storybook/storybook.requires';
+import './.rnstorybook/storybook.requires';
+import { view } from './.rnstorybook/storybook.requires';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const StorybookUI = view.getStorybookUI({
