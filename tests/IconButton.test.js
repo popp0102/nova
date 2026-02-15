@@ -1,6 +1,5 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
-import { Pressable } from 'react-native';
 import IconButton from '@nova/IconButton';
 
 describe('IconButton', () => {
